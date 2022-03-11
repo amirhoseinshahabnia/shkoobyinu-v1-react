@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Login from '../login';
 import { useAccount } from 'wagmi';
 import { ClipboardIcon } from '@heroicons/react/outline';
-import ProfileImage from '../utils/profileImages';
 
 const Nav = () => {
   const [{ data: accountData }, disconnect] = useAccount();

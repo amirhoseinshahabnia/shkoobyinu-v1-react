@@ -16,7 +16,7 @@ const Home = () => {
       <Login />
 
       <div>
-        <section className="section relative h-vh relative gradient-a">
+        <section className="section relative h-vh relative">
           <div className="po-a xy">
             <div className="ft-center w-15">
               <div className="text-center black">
