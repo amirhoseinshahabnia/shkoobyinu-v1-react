@@ -2,10 +2,16 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useMediaQuery } from 'react-responsive';
+import { ToastContainer, toast } from 'react-toastify';
 import heroImg from './assets/img/shkooby-hero.png';
 import gradientBg from './assets/img/grad-bg@2x.png';
+import gradientBgLrg from './assets/img/grad-bg-lrg.png';
 import arrowBg from './assets/img/li-bg@2x.png';
 import circleBg from './assets/img/li-circle@2x.png';
+import sqaures from './assets/img/steps-squares.png';
+import copyIcon from './assets/img/copy-icon@2x.png';
+import 'react-toastify/dist/ReactToastify.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +25,8 @@ const StyledHero = styled.section`
 
 const StyledTimeline = styled.section`
   padding: 50px 0 150px;
-  background: url(${gradientBg});
+  position: relative;
+  /* background: url(${gradientBg}); */
 
   .timeline {
     padding-top: 100px;
@@ -110,6 +117,16 @@ const StyledTimeline = styled.section`
     max-width: 500px;
   }
 
+  #grad-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+
   @media screen and (max-width: 1440px) {
     .timeline {
       padding-top: 100px;
@@ -119,6 +136,85 @@ const StyledTimeline = styled.section`
       position: relative;
     }
   }
+
+  @media screen and (min-width: 1441px) {
+    padding: 200px 0;
+  }
+`;
+
+const StyledSteps = styled.section`
+  width: 80%;
+  margin: 0 auto;
+  padding: 75px 0;
+
+  > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .step-title {
+    font-family: 'VT Regular';
+    font-size: 10.3125em;
+    margin: 0;
+  }
+
+  .step-sub {
+    font-family: 'Poppins Semi Bold';
+    font-size: 1.25em;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    font-family: 'Press Start';
+    font-size: 2em;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+`;
+
+const StyledAddressInput = styled.section`
+  padding: 75px 0;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h5 {
+    font-size: 2.2em;
+    font-family: 'Chakra Semi Bold';
+    margin: 0 0 30px;
+  }
+
+  .input-ctn {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: center;
+  }
+
+  input {
+    width: 80%;
+    height: 60px;
+    border: none;
+    border-radius: 100px;
+    font-size: 21px;
+    text-align: center;
+  }
+
+  input:disabled {
+    background-color: #fff;
+    color: #000;
+  }
+
+  img {
+    cursor: pointer;
+    width: 43px;
+    display: block;
+    margin-left: 30px;
+  }
 `;
 
 const Home = () => {
@@ -126,9 +222,24 @@ const Home = () => {
   const [contractAddress, setContractAddress] = useState('');
   const [chain, setBlockchain] = useState('Ethereum');
 
-  console.log(owner)
-  console.log(contractAddress)
-  console.log(chain)
+  const INU_ADDRESS = '0x29a5c1db7321c5c9eae57f9366ee8eef00ca11fb';
+
+  console.log(owner);
+  console.log(contractAddress);
+  console.log(chain);
+
+  const isLargeDesktop = useMediaQuery({
+    query: '(min-width: 1441px)',
+  });
+
+  function copyText(entryText) {
+    navigator.clipboard.writeText(entryText);
+  }
+
+  const copyClickHandler = () => {
+    copyText(INU_ADDRESS);
+    toast.success('Copied To Clipboard');
+  };
 
   const launchRef = useRef(null);
   const phaseOneRef = useRef(null);
@@ -182,7 +293,17 @@ const Home = () => {
         <img src={heroImg} alt="Shkooby" className="hero-img" />
       </StyledHero>
       <StyledTimeline id="frontTime">
-        <h2 className="white main-heading center-content">SHKOOBY ROADMAP</h2>
+        {isLargeDesktop ? (
+          <img src={gradientBgLrg} alt="Gradient Background" id="grad-bg" />
+        ) : (
+          <img src={gradientBg} alt="Gradient Background" id="grad-bg" />
+        )}
+        <h2
+          className="white main-heading center-content"
+          style={{ position: 'relative' }}
+        >
+          SHKOOBY ROADMAP
+        </h2>
         <div className="timeline">
           <div className="vl"></div>
           <div className="left tl-content white" ref={launchRef}>
@@ -253,9 +374,67 @@ const Home = () => {
           </div>
         </div>
       </StyledTimeline>
+      <StyledSteps>
+        <h5 className="teal center-content">How To Buy SHKOOBY</h5>
+        <div>
+          <div className="step-content white center-content">
+            <p className="step-title">1</p>
+            <p className="step-sub">
+              Create <br />A Wallet
+            </p>
+          </div>
+          <div className="steps-squares">
+            <img src={sqaures} alt="" id="steps-squares" />
+          </div>
+          <div className="step-content white center-content">
+            <p className="step-title">2</p>
+            <p className="step-sub">
+              Find Your <br />
+              Wallet With ETH
+            </p>
+          </div>
+          <div className="steps-squares">
+            <img src={sqaures} alt="" id="steps-squares" />
+          </div>
+          <div className="step-content white center-content">
+            <p className="step-title">3</p>
+            <p className="step-sub">
+              Input SHKOOBY <br />
+              Adress In Uniswap
+            </p>
+          </div>
+          <div className="steps-squares">
+            <img src={sqaures} alt="" id="steps-squares" />
+          </div>
+          <div className="step-content white center-content">
+            <p className="step-title">4</p>
+            <p className="step-sub">
+              Hit 'Swap' <br />
+              On Uniswap
+            </p>
+          </div>
+        </div>
+      </StyledSteps>
+      <StyledAddressInput>
+        <h5 className="accent-color">Shkooby Inu Contact Address</h5>
+        <div className="input-ctn">
+          <input
+            type="text"
+            value="0x29a5c1db7321c5c9eae57f9366ee8eef00ca11fb"
+            readonly
+            disabled
+          />
+          <img
+            src={copyIcon}
+            alt="Copy Ctn"
+            className="opacity"
+            onClick={copyClickHandler}
+          />
+        </div>
+      </StyledAddressInput>
 
-      <footer className="page-footer">
-      </footer>
+      <footer className="page-footer"></footer>
+      <ToastContainer type="success" theme="dark" />
     </div>
   );
 };

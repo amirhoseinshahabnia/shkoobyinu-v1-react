@@ -34,9 +34,17 @@
   src: url('./assets/fonts/VT323-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Poppins Semi Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
+  /* font-size: 1.05vw; */
 }
 
 .container {
@@ -57,6 +65,14 @@ body {
 
 .primary-color {
   color: #c8ff66;
+}
+
+.accent-color {
+  color: #6826d2;
+}
+
+.teal {
+  color: #ccffea;
 }
 
 .primary-bg {
