@@ -84,7 +84,7 @@ const ShkoobyPool = () => {
           // console.log(humanReadableUnixTimestamp(when));
           console.log("Event - Closed");
           console.log(`State - ${humanReadableEscrowState(contractState)}`);
-          console.log(`${moment(humanReadableUnixTimestamp(when)).fromNow()} - ${humanReadableUnixTimestamp(when)}`)
+          // console.log(`${moment(humanReadableUnixTimestamp(when)).fromNow()} - ${humanReadableUnixTimestamp(when)}`)
         });
 
         contract.on("Withdraw", async (depositNumber, event) => {
@@ -92,29 +92,7 @@ const ShkoobyPool = () => {
 
           const contractState = await contract.state();
           const contractBalance = await provider.getBalance(contract.address);
-          const previousBuyers = await contract.listPreviousBuyers();
 
-          setEscrow({
-            ...escrow,
-            state: humanReadableEscrowState(contractState),
-            balance: ethers.utils.formatEther(contractBalance.toString()),
-            previousBuyers,
-          })
-
-          setBuyer(by);
-          const contractBuyerBalance = await provider.getBalance(by);
-          setBuyerBalance(ethers.utils.formatEther(contractBuyerBalance));
-
-          setRole("buyer");
-          console.log("This visitor became the buyer of this contract");
-
-          // console.log("when");
-          // console.log(when);
-          // console.log(humanReadableUnixTimestamp(when));
-          console.log("Event - ConfirmPurchase");
-          console.log(`By - ${by}`);
-          console.log(`State - ${humanReadableEscrowState(contractState)}`);
-          console.log(`${moment(humanReadableUnixTimestamp(when)).fromNow()} - ${humanReadableUnixTimestamp(when)}`)
         });
 
         const signer = provider.getSigner(); // user
@@ -152,6 +130,7 @@ const ShkoobyPool = () => {
             <div className="h-screen flex flex-col items-center justify-center gap-2 ">
                 <h1 className="text-white text-3xl -mt-24 font-bold mb-12">SHKOOBY</h1>
 
+                <input type="number" name="depositAmount" />
                 
 
             </div>

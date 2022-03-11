@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Login from './components/login';
-import ShkoobyPool from './components/shkoobyPool';
+// import ShkoobyPool from './components/shkoobyPool';
 import { useAccount, useConnect, useBalance } from 'wagmi';
 import { ClipboardIcon } from '@heroicons/react/outline';
 
@@ -41,7 +41,7 @@ if (accountData) {
                 {data?.formatted} {data?.symbol} {/*{data?.value}*/}
             </div>
 
-            <ShkoobyPool />
+            {/*<ShkoobyPool />*/}
             </>
         )
     }
