@@ -10,6 +10,11 @@ async function main() {
 
     const [admin] = await ethers.getSigners();
 
+    console.log("Deploying contracts with the account:", admin.address);
+
+    console.log("Account balance:", (await deployer.getBalance()).toString());
+
+
     const TokenFactory = await ethers.getContractFactory("TestToken");
     const StakingPoolFactory = await ethers.getContractFactory("PoolFactory");
 
