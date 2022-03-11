@@ -1,17 +1,20 @@
 import { Buffer } from 'buffer';
-import { Provider, defaultChains } from 'wagmi';
+import { chain, Provider, defaultChains, useConnect, useAccount, useNetwork, useSignMessage } from 'wagmi';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { WalletLinkConnector } from 'wagmi/connectors/walletLink';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './home';
 import Invest from './invest';
-import MyProfile from './myprofile';
 import Nav from './components/nav';
 
 function App() {
+
   // initialize wagmi library connectors for Metamask and Walletconnect
-  const connectors = () => {
+  const connectors = ({ chainId }) => {
+    const rpcUrl =
+    defaultChains.find((x) => x.id === chainId)?.rpcUrls?.[0] ??
+    chain.mainnet.rpcUrls[0];
     return [
       new InjectedConnector({ defaultChains }),
       new WalletConnectConnector({
@@ -28,7 +31,7 @@ function App() {
           options: {
             appName: 'Shkooby',
             infuraId: 'e3105f2100bd48708f77e21b1886477e',
-            qr: true,
+            jsonRpcUrl: `${rpcUrl}/e3105f2100bd48708f77e21b1886477e`
           },
         },
       }),
@@ -43,11 +46,10 @@ function App() {
     >
       <div className="container">
         <Router>
-          <Nav className="gradient"></Nav>
+          <Nav className=""></Nav>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/invest" element={<Invest />} />
-            <Route path="/myprofile" element={<MyProfile />} />
+            <Route path="/staking" element={<Invest />} />
           </Routes>
         </Router>
       </div>

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Login from './login';
 import heroImg from './assets/img/shkooby-hero.png';
 import gradientBg from './assets/img/grad-bg@2x.png';
 import arrowBg from './assets/img/li-bg@2x.png';
@@ -123,10 +122,13 @@ const StyledTimeline = styled.section`
 `;
 
 const Home = () => {
-  // const [owner, setOwner] = useState('');
-  // const [contractAddress, setContractAddress] = useState('');
-  // const [NFTs, setNFTs] = useState('');
-  // const [chain, setBlockchain] = useState('Ethereum');
+  const [owner, setOwner] = useState('');
+  const [contractAddress, setContractAddress] = useState('');
+  const [chain, setBlockchain] = useState('Ethereum');
+
+  console.log(owner)
+  console.log(contractAddress)
+  console.log(chain)
 
   const launchRef = useRef(null);
   const phaseOneRef = useRef(null);
@@ -179,7 +181,7 @@ const Home = () => {
         <p className="white sub-heading">We are the future of the Metaverse</p>
         <img src={heroImg} alt="Shkooby" className="hero-img" />
       </StyledHero>
-      <StyledTimeline>
+      <StyledTimeline id="frontTime">
         <h2 className="white main-heading center-content">SHKOOBY ROADMAP</h2>
         <div className="timeline">
           <div className="vl"></div>
@@ -251,18 +253,8 @@ const Home = () => {
           </div>
         </div>
       </StyledTimeline>
-      <Login />
 
       <footer className="page-footer">
-        <span>made by </span>
-        <a href="https://georgemartsoukos.com/" target="_blank">
-          <img
-            width="24"
-            height="24"
-            src="https://assets.codepen.io/162656/george-martsoukos-small-logo.svg"
-            alt="George Martsoukos logo"
-          />
-        </a>
       </footer>
     </div>
   );

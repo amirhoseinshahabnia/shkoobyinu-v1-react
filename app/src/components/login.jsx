@@ -1,10 +1,13 @@
-import { useConnect } from "wagmi"
+import { useState, useEffect } from "react";
+import { useConnect, useAccount } from "wagmi";
 import { Link, useNavigate } from "react-router-dom"
-import Modal from "./components/helpers/modal";
-import "./components/helpers/modal.css";
+import Modal from "./helpers/modal";
+import "./helpers/modal.css";
 
 const Login = () => {
     const [{ data, error }, connect] = useConnect()
+    const [{ data: accountData, loading }, disconnect] = useAccount()
+    // const [chain, setBlockchain] = useState("Ethereum")
     const navigate = useNavigate()
 
     return (
@@ -29,7 +32,7 @@ const Login = () => {
                     <div key={x.id} className="w-2/6">
                         <button className="py-3 w-full bg-white rounded-sm hover:bg-slate-100" disabled={!x.ready} key={x.id} onClick={() => {
                             connect(x)
-                            navigate("/myprofile", {replace: true})
+                            // navigate("/myprofile", {replace: true})
                         }}>
                             {x.name}
                             {!x.ready && ' (unsupported)'}
@@ -39,11 +42,6 @@ const Login = () => {
 
                 {
                     error && <div>{error?.message ?? 'Failed to connect'}</div>}
-
-                <div className="text-white text-center mt-8 ">
-                    <p>or continue without</p>
-                    <Link className="font-bold" to={"/explore"}>logging in</Link>
-                </div>
 
             </div>
 

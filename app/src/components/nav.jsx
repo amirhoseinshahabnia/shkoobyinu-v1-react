@@ -1,8 +1,5 @@
 import { Buffer } from 'buffer';
 import { Link } from 'react-router-dom';
-import Login from '../login';
-import { useAccount } from 'wagmi';
-import { ClipboardIcon } from '@heroicons/react/outline';
 import styled from 'styled-components';
 import { ReactComponent as MainLogo } from '../assets/img/logo-dark.svg';
 import ChakraSemiBold from '../assets/fonts/ChakraPetch-Bold.ttf';
@@ -59,19 +56,19 @@ const Nav = () => {
       </Link>
       <StyledLinks>
         <li>
-          <a className="opacity white" href="#">
+          <a className="opacity white" href="#frontTime">
             Roadmap
           </a>
         </li>
         <li>
-          <a className="opacity white external" href="#">
+          <a className="opacity white external" href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf#page=3" target="_blank">
             Litepaper
           </a>
         </li>
         <li>
-          <a className="opacity white" href="#">
+        <Link className="opacity white" to="/staking">
             Staking
-          </a>
+        </Link>
         </li>
         <li>
           <a className="opacity white external" href="#">
