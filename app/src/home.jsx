@@ -174,7 +174,7 @@ const StyledSteps = styled.section`
 `;
 
 const StyledAddressInput = styled.section`
-  padding: 75px 0;
+  padding: 75px 0 125px;
   width: 60%;
   margin: 0 auto;
   display: flex;
@@ -432,8 +432,6 @@ const Home = () => {
           />
         </div>
       </StyledAddressInput>
-
-      <footer className="page-footer"></footer>
       <ToastContainer type="success" theme="dark" />
     </div>
   );

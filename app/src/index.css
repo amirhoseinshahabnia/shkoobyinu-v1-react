@@ -41,6 +41,13 @@
   src: url('./assets/fonts/Poppins-SemiBold.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'ArchivoBlack Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
