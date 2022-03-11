@@ -1,5 +1,126 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Login from './login';
+import heroImg from './assets/img/shkooby-hero.png';
+import gradientBg from './assets/img/grad-bg@2x.png';
+import arrowBg from './assets/img/li-bg@2x.png';
+import circleBg from './assets/img/li-circle@2x.png';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const StyledHero = styled.section`
+  padding-top: 75px;
+  img {
+    display: block;
+    width: 100%;
+  }
+`;
+
+const StyledTimeline = styled.section`
+  padding: 50px 0 150px;
+  background: url(${gradientBg});
+
+  .timeline {
+    padding-top: 100px;
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .timeline .vl {
+    border-left: 2px solid #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    top: 75px;
+    bottom: 10px;
+  }
+
+  .timeline .right {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .timeline .right > div {
+    margin-left: 57%;
+  }
+
+  .timeline ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .timeline li {
+    font-family: 'Chakra Regular';
+    font-size: 1.5625em;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .timeline li:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -35px;
+  }
+
+  .timeline li.ticked::before {
+    width: 29px;
+    height: 29px;
+    background: url(${arrowBg});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .timeline li.circle::before {
+    width: 24px;
+    height: 24px;
+    background: url(${circleBg});
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .tl-content {
+    padding-top: 30px;
+  }
+
+  .tl-content > div {
+    padding-left: 60px;
+  }
+
+  .tl-content:first-child {
+    padding-top: 0;
+  }
+
+  .phase-2 {
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 40%;
+    padding-right: 30px;
+    max-width: 500px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    .timeline {
+      padding-top: 100px;
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+`;
 
 const Home = () => {
   // const [owner, setOwner] = useState('');
@@ -7,285 +128,142 @@ const Home = () => {
   // const [NFTs, setNFTs] = useState('');
   // const [chain, setBlockchain] = useState('Ethereum');
 
+  const launchRef = useRef(null);
+  const phaseOneRef = useRef(null);
+  const phaseTwoRef = useRef(null);
+  const phaseThreeRef = useRef(null);
+  const phaseFourRef = useRef(null);
+
   useEffect(() => {
-    console.log('mounted');
-  });
+    const launchEl = launchRef.current;
+    const oneEl = phaseOneRef.current;
+    const twoEl = phaseTwoRef.current;
+    const threeEl = phaseThreeRef.current;
+    const fourEl = phaseFourRef.current;
+
+    gsap.fromTo(
+      launchEl,
+      { x: -500, opacity: 0 },
+      { opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: launchEl } }
+    );
+
+    gsap.fromTo(
+      oneEl,
+      { x: 500, opacity: 0 },
+      { opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: oneEl } }
+    );
+
+    gsap.fromTo(
+      twoEl,
+      { x: -500, opacity: 0 },
+      { opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: twoEl } }
+    );
+
+    gsap.fromTo(
+      threeEl,
+      { x: 500, opacity: 0 },
+      { opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: threeEl } }
+    );
+
+    gsap.fromTo(
+      fourEl,
+      { x: -500, opacity: 0 },
+      { opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: fourEl } }
+    );
+  }, []);
 
   return (
     <div>
-      <Login />
-
-      <div>
-        <section className="section relative h-vh relative">
-          <div className="po-a xy">
-            <div className="ft-center w-15">
-              <div className="text-center black">
-                <h1
-                  className="mx-auto mb40"
-                  value="0x29a5c1db7321c5c9eae57f9366ee8eef00ca11fb"
-                >
-                  SHKOOBY
-                </h1>
-
-                <p className="black ft-1xl">
-                  A community-driven meme token. We are the future of the
-                  Metaverse.
-                </p>
-
-                <p className="mb40 black">
-                  Stay tuned for DEX platform, Games, NFT Marketplace and MEMES
-                </p>
-
-                <a href="#" className="mx-auto btn--primary report mb40">
-                  View Audit Report
-                </a>
-                <a href="#" className="positive top-10">
-                  <img
-                    src=""
-                    alt="logo"
-                    width="80"
-                    height="40"
-                    className="mx-auto"
-                  />
-                </a>
-              </div>
-
-              <br />
-              <br />
-
-              <br />
-              <br />
-
-              <div className="ft-center black noflex">
-                <div className="black">
-                  <h3 className="black ft-4xl mb20 mt20">
-                    SHKOOBY INU CONTRACT ADDRESS
-                  </h3>
-
-                  <input
-                    id="adddress"
-                    className="blk w-100 mb40  btn--secondary"
-                    value="0x29a5c1db7321c5c9eae57f9366ee8eef00ca11fb"
-                  />
-
-                  <span className="blo`ck mb10 blk"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="howTo" className="bg-gradient-pink">
-          <div className="pt50 pb50 pl40 pr40 m-pr0 m-pl0 ">
-            <h2 className="headline center">How to Buy Shkooby</h2>
-
-            <div className="black center">
-              <div className="flx justify-center mobile-swipe">
-                <div className="swipe" style={{ flexGrow: 3 }}>
-                  <p className="blk ft-3xl lg5">1</p>
-                  <span className="blk alt-2">
-                    create
-                    <br />a wallet
-                  </span>
-                </div>
-
-                <div className="dt" style={{ flexGrow: 2 }}>
-                  <p
-                    className="blk ft-3xl relative"
-                    style={{ height: '5px', top: '40%' }}
-                  >
-                    {' '}
-                    &#9632; &#9632; &#9632; &#9632;{' '}
-                  </p>
-                </div>
-
-                <div className="swipe" style={{ flexGrow: 3 }}>
-                  <p className="blk ft-3xl lg5">2</p>
-                  <span className="blk alt-2">
-                    Fund your wallet
-                    <br />
-                    with Ether
-                  </span>
-                </div>
-
-                <div className="dt" style={{ flexGrow: 2 }}>
-                  <p
-                    className="blk ft-3xl relative"
-                    style={{ height: '5px', top: '40%' }}
-                  >
-                    {' '}
-                    &#9632; &#9632; &#9632; &#9632;{' '}
-                  </p>
-                </div>
-
-                <div className="swipe" style={{ flexGrow: 3 }}>
-                  <p className="blk ft-3xl lg5">3</p>
-                  <span className="blk alt-2">
-                    Input Shkoobyy
-                    <br />
-                    Address in Uniswap
-                  </span>
-                </div>
-
-                <div className="dt" style={{ flexGrow: 2 }}>
-                  <p
-                    className="blk ft-3xl relative"
-                    style={{ height: '5px', top: '40%' }}
-                  >
-                    {' '}
-                    &#9632; &#9632; &#9632; &#9632;{' '}
-                  </p>
-                </div>
-
-                <div className="swipe" style={{ flexGrow: 3 }}>
-                  <p className="blk ft-3xl lg5">4</p>
-                  <span className="blk alt-2">
-                    Hit 'SWAP' on
-                    <br />
-                    Uniswap
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="bg-black">
-            <section id="roadmap">
-              <div className="container">
-                <h2 className="mb30">SHKOOBY ROADMAP</h2>
-              </div>
-            </section>
-
-            <section className="timeline">
+      <StyledHero className="center-content">
+        <h1 className="white main-heading">SHKOOBY</h1>
+        <p className="white sub-heading">We are the future of the Metaverse</p>
+        <img src={heroImg} alt="Shkooby" className="hero-img" />
+      </StyledHero>
+      <StyledTimeline>
+        <h2 className="white main-heading center-content">SHKOOBY ROADMAP</h2>
+        <div className="timeline">
+          <div className="vl"></div>
+          <div className="left tl-content white" ref={launchRef}>
+            <div>
+              <h4 className="secondary-heading">Launch</h4>
               <ul>
-                <li>
-                  <div>
-                    <time>Launch</time>
-                    Fair launch with 100% circulating supply on the market
-                    <br />
-                    No presale
-                    <br />
-                    Liquidity Burnt
-                    <br />
-                    CoinGecko Listing
-                    <br />
-                    Community Marketing Fund
-                    <br />
-                    Marketing Campaign
-                    <br />
-                    Website Launch
-                    <br />
-                  </div>
+                <li className="ticked">
+                  Fair launch with 100% circulating
+                  <br />
+                  supply on the market
                 </li>
-                <li>
-                  <div>
-                    <time>Phase 1</time>
-                    CoinMarketcap Listing
-                    <br />
-                    Community Contests
-                    <br />
-                    1,000 Holders
-                    <br />
-                    2,000 Telegram Members
-                    <br />
-                    2,000 Twitter Followers
-                    <br />
-                    3,000 Instagram Followers
-                    <br />
-                    Twitter & Instagram Campaigns
-                    <br />
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <time>Phase 2</time>
-                    Fair launch with 100% circulating supply on the market
-                    <br />
-                    5,000 Holders
-                    <br />
-                    5,000 Telegram Members
-                    <br />
-                    First Phase Partner Reveals
-                    <br />
-                    Billboard Campaign
-                    <br />
-                    Reddit Community Campaign
-                    <br />
-                    Litepaper Release
-                    <br />
-                    Contract Audit
-                    <br />
-                    Tier 3 Exchange Listings
-                    <br />
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <time>Phase 3</time>
-                    <br />
-                    10,000 Holders
-                    <br />
-                    15,000 Telegram Members
-                    <br />
-                    2nd Phase Partner Reveals
-                    <br />
-                    SHKOOBY-PAPER Release (Whitepaper)
-                    <br />
-                    Growth Marketing Campaign (Buses/Taxis)
-                    <br />
-                    SHKOOBY-VERSE Reveal (Metaverse)
-                    <br />
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <time>Phase 5</time>
-                    100,000 Holders
-                    <br />
-                    100,000 Telegram Members
-                    <br />
-                    Viral Marketing Campaign
-                    <br />
-                    3rd Phase Partner Reveals
-                    <br />
-                    SHKOOBY-VERSE Full Release
-                    <br />
-                    First SHKOOBY-VERSE Game
-                    <br />
-                    SHKOOBY-SWAP Launch
-                    <br />
-                    Launch Party
-                    <br />
-                    Celebrity Meet & Greet
-                    <br />
-                  </div>
+                <li className="ticked">No presale</li>
+                <li className="ticked">Liquidity Burnt</li>
+                <li className="ticked">CoinGecko Listing</li>
+                <li className="ticked">Community Marketing Fund</li>
+                <li className="ticked">Marketing Campaign</li>
+                <li className="ticked">Website Launch</li>
+              </ul>
+            </div>
+          </div>
+          <div className="right tl-content white" ref={phaseOneRef}>
+            <div>
+              <h4 className="secondary-heading">Phase 1</h4>
+              <ul>
+                <li className="ticked">CoinMarketcap Listing</li>
+                <li className="ticked">Community Contests</li>
+                <li className="ticked">Social media growth campaign</li>
+              </ul>
+            </div>
+          </div>
+          <div className="left tl-content white" ref={phaseTwoRef}>
+            <div className="phase-2">
+              <h4 className="secondary-heading">Phase 2</h4>
+              <ul>
+                <li className="ticked">Staking Dapp Release</li>
+                <li className="circle">NFT Collection reveal and Mint</li>
+                <li className="circle">Tier 2 & 3 exchange listings</li>
+                <li className="circle">Growth Marketing Campaign</li>
+              </ul>
+            </div>
+          </div>
+          <div className="right tl-content white" ref={phaseThreeRef}>
+            <div>
+              <h4 className="secondary-heading">Phase 3</h4>
+              <ul>
+                <li className="circle">Shkoobyverse Beta release</li>
+                <li className="circle">Shkoobyverse Launch Event Party</li>
+                <li className="circle">Shkooby-Paper Release (white paper)</li>
+                <li className="circle">Viral Marketing Campaign</li>
+              </ul>
+            </div>
+          </div>
+          <div className="left tl-content white" ref={phaseFourRef}>
+            <div>
+              <h4 className="secondary-heading">Phase 4</h4>
+              <ul>
+                <li className="circle">Shkooby Partner reveals</li>
+                <li className="circle">Shkoobyverse Alpha release</li>
+                <li className="circle">Re-occuring Shkooby Events</li>
+                <li className="circle">First game within the Shkoobyverse</li>
+                <li className="circle">
+                  Celebrity Meet and Greet at first
+                  <br />
+                  real world Shkooby party
                 </li>
               </ul>
-            </section>
-            <footer className="page-footer">
-              <span>made by </span>
-              <a href="https://georgemartsoukos.com/" target="_blank">
-                <img
-                  width="24"
-                  height="24"
-                  src="https://assets.codepen.io/162656/george-martsoukos-small-logo.svg"
-                  alt="George Martsoukos logo"
-                />
-              </a>
-            </footer>
+            </div>
           </div>
-        </section>
+        </div>
+      </StyledTimeline>
+      <Login />
 
-        <section>
-          <div></div>
-        </section>
-
-        <footer>
-          <div></div>
-        </footer>
-      </div>
+      <footer className="page-footer">
+        <span>made by </span>
+        <a href="https://georgemartsoukos.com/" target="_blank">
+          <img
+            width="24"
+            height="24"
+            src="https://assets.codepen.io/162656/george-martsoukos-small-logo.svg"
+            alt="George Martsoukos logo"
+          />
+        </a>
+      </footer>
     </div>
   );
 };
