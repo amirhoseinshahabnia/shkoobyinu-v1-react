@@ -132,28 +132,28 @@ const Footer = () => {
       <div className="right-ctn">
         <ul>
           <li>Token</li>
-          <li>Roadmap</li>
+          <li><a href="#roadmap">Roadmap</a></li>
           <li>Litepaper</li>
-          <li>Buy Now</li>
+          <li><a href="https://app.uniswap.org" target="_blanl">Buy Now</li>
         </ul>
         <ul className="right-links-ctn">
           <li>
-            <a href="#" className="white opacity">
+            <a href="https://t.me/shkoobyinu" className="white opacity">
               Telegram
             </a>
           </li>
           <li>
-            <a href="#" className="white opacity">
+            <a href="https://www.twitter.com/shkoobyinu" className="white opacity">
               Twitter
             </a>
           </li>
           <li>
-            <a href="#" className="white opacity">
+            <a href="https://medium.com/@shkoobyinu" className="white opacity">
               Discord
             </a>
           </li>
           <li>
-            <a href="#" className="white opacity">
+            <a href="https://www.instagram.com/shkoobyinu" className="white opacity">
               Instagram
             </a>
           </li>
