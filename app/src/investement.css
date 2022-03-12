@@ -1,0 +1,169 @@
+
+
+    #investment-content {
+        height: calc(100vh - 325px);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .top-content {
+        position: relative;
+        text-align: center;
+        top: 4vh;
+    }
+
+    .top-content h1 {
+        font-family: "Chakra Regular";
+        font-weight: 400;
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+
+    .top-content h3 {
+        font-family: "Chakra Regular";
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .top-content button {
+        margin: 0 auto;
+        max-width: 280px;
+        box-shadow: 0px 0px 15px rgb(210 255 142 / 80%);
+    }
+
+    .top-content button:hover {
+        max-width: 280px;
+        box-shadow: 0px 0px 15px rgb(210 255 142 / 80%);
+    }
+
+    .bottom-content {
+        position: absolute;
+        width: 100%;
+        height: 4rem;
+        bottom: 2rem;
+        text-align: center;
+    }
+
+    .bottom-content a {
+        border: 1px solid white;
+        color: white;
+        font-size: 1.25rem;
+        padding: 10px 20px;
+        border-radius: 30px;
+        min-width: 290px;
+        display: inline-block;
+        font-family: "Chakra Regular";
+        background-size: 65px;
+        background-position: 20px 10px;
+        background-repeat: no-repeat;
+    }
+
+    .bottom-content a span {
+        position: relative;
+        left: 40px;
+    }
+
+    .bottom-content a span:before {
+        content: " ";
+        position: relative;
+    }
+
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+
+@media screen and (max-width: 1200px) {
+    #investment-content {
+        background-size: 90%;
+    } 
+}
+
+@media screen and (max-width: 990px) {
+    #investment-content {
+        background-size: 100%;
+    } 
+
+    .top-content h1 {
+        font-size: 3.2rem;
+        line-height: 3.8rem;
+    }
+
+    .top-content h3 {
+        font-size: 1.75rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .top-content button {
+        margin: 0 auto;
+        max-width: 280px;
+        box-shadow: 0px 0px 15px rgb(210 255 142 / 80%);
+    }
+
+    .top-content button:hover {
+        max-width: 280px;
+        box-shadow: 0px 0px 15px rgb(210 255 142 / 80%);
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #investment-content {
+        height: 75vh;
+        background-size: 80%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    #investment-content {
+        background-size: 300%;
+    } 
+    .top-content {
+        margin-bottom: 600px;
+        top: .5rem;
+    }
+    .top-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .top-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .top-content button {
+        min-width: 220px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 57vh;
+    }
+
+    .top-content button:hover {
+        max-width: 280px;
+        box-shadow: 0px 0px 15px rgb(210 255 142 / 80%);
+    }
+
+    .bottom-content {
+        position: absolute;
+        width: 100%;
+        height: 1.2rem;
+        bottom: 4rem;
+        text-align: center;
+    }
+
+    .bottom-content button {
+        margin: 0 auto 20px;
+    }
+}

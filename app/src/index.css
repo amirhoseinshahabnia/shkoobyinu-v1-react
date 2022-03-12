@@ -39,10 +39,38 @@
 }
 
 @font-face {
-    font-family: "Poppins Semi Bold";
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Sofia Pro Medium";
     font-style: normal;
     font-weight: normal;
-    src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+    src: url("./assets/fonts/SofiaProMedium.ttf") format("truetype");
 }
 
 @font-face {
@@ -51,6 +79,14 @@
   font-weight: normal;
   src: url('./assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
 }
+
+
+/* investement page */
+
+#investment-content {
+    height: calc(100vh - 325px);    
+}
+
 
 #root {
     overflow-x: hidden;
