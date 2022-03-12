@@ -3,7 +3,6 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import Logbook from "./logbook";
-
 import unicorn from "../assets/img/unicorniconsvg.svg";
 import shkooby from "../assets/img/shkoobycoin.svg";
 import shkoobyeth from "../assets/img/shkoobyethcoin.svg";
@@ -144,6 +143,7 @@ const StakeButton = styled(Button)`
 const Dashboard = () => {
     return (
         <>
+            <StakeModal></StakeModal>
             <Container>
                 <Grid>
                     <Staked>
@@ -277,11 +277,9 @@ const Dashboard = () => {
                             </AccountRight>
                         </div>
                     </Account>
-
                     <Logbook />
                 </Grid>
             </Container>
-            ;
         </>
     );
 };
