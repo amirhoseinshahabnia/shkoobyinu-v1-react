@@ -11,6 +11,7 @@ import circleBg from './assets/img/li-circle@2x.png';
 import sqaures from './assets/img/steps-squares.png';
 import copyIcon from './assets/img/copy-icon@2x.png';
 import { ReactComponent as HeroLogo } from './assets/img/shkooby-white-logo.svg';
+import { ReactComponent as HackenLogo } from './assets/img/hacken-logo.svg';
 import 'react-toastify/dist/ReactToastify.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -392,6 +393,24 @@ const StyledAddressInput = styled.section`
   }
 `;
 
+const StyledAuditReport = styled.section`
+  padding-top: 30px;
+  padding-bottom: 20px;
+
+  a {
+    text-transform: capitalize;
+    box-shadow: none;
+    border: 1px solid #fff;
+  }
+
+  svg {
+    display: block;
+    width: 20%;
+    max-width: 100px;
+    margin: 20px auto 0;
+  }
+`;
+
 const Home = () => {
   const [owner, setOwner] = useState('');
   const [contractAddress, setContractAddress] = useState('');
@@ -405,6 +424,10 @@ const Home = () => {
 
   const isLargeDesktop = useMediaQuery({
     query: '(min-width: 1441px)',
+  });
+
+  const isTabletOrMobile = useMediaQuery({
+    query: '(max-width: 768px)',
   });
 
   function copyText(entryText) {
@@ -468,6 +491,18 @@ const Home = () => {
         <p className="white sub-heading">We are the future of the Metaverse</p>
         <img src={heroImg} alt="Shkooby" className="hero-img" />
       </StyledHero>
+      {isTabletOrMobile ? (
+        <StyledAuditReport className="center-content">
+          <a
+            href="https://hacken.io/wp-content/uploads/2021/11/Shkoobiinu_16112021SCAudit_Report.pdf"
+            target="_blank"
+            className="white opacity main-btn"
+          >
+            View Audit Report
+          </a>
+          <HackenLogo id="hacken-logo" />
+        </StyledAuditReport>
+      ) : null}
       <StyledTimeline id="frontTime">
         {isLargeDesktop ? (
           <img src={gradientBgLrg} alt="Gradient Background" id="grad-bg" />
