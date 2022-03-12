@@ -7,10 +7,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import heroImg from './assets/img/shkooby-hero.png';
 import gradientBg from './assets/img/grad-bg@2x.png';
 import gradientBgLrg from './assets/img/grad-bg-lrg.png';
-import arrowBg from './assets/img/li-bg@2x.png';
 import circleBg from './assets/img/li-circle@2x.png';
 import sqaures from './assets/img/steps-squares.png';
 import copyIcon from './assets/img/copy-icon@2x.png';
+import { ReactComponent as HeroLogo } from './assets/img/shkooby-white-logo.svg';
 import 'react-toastify/dist/ReactToastify.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,6 +20,35 @@ const StyledHero = styled.section`
   img {
     display: block;
     width: 100%;
+  }
+
+  svg {
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    svg {
+      width: 25%;
+    }
+  }
+
+  @media screen and (max-width: 967px) {
+    svg {
+      width: 30%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 50px;
+  }
+
+  @media screen and (max-width: 580px) {
+    svg {
+      width: 40%;
+    }
   }
 `;
 
@@ -66,24 +95,19 @@ const StyledTimeline = styled.section`
     position: relative;
   }
 
-  .timeline li:last-child {
-    margin-bottom: 0;
-  }
-
   .timeline li::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -35px;
+    top: 5px;
+    left: -50px;
   }
 
   .timeline li.ticked::before {
-    width: 29px;
-    height: 29px;
-    background: url(${arrowBg});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background: #b544a6;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px rgba(181, 68, 166, 0.8);
+    height: 30px;
+    width: 30px;
   }
 
   .timeline li.circle::before {
@@ -138,31 +162,86 @@ const StyledTimeline = styled.section`
   }
 
   @media screen and (max-width: 990px) {
-      .timeline li {
-        font-family: 'Chakra Regular';
-        font-size: 1.2625em;
-        margin-bottom: 25px;
-        position: relative;
-      }
+    padding-bottom: 75px;
+    .timeline li {
+      font-size: 1.2625em;
+      margin-bottom: 25px;
+      position: relative;
+    }
   }
 
   @media screen and (max-width: 768px) {
-      .timeline .vl {
-        left: -1rem!important;
-      }
+    .timeline {
+      padding-top: 50px;
+    }
 
-      .left.tl-content.white,
-      .left.tl-content.white > div,
-      .right.tl-content.white,
-      .right.tl-content.white > div {
-        max-width: 390px!important;
-        margin: 0 auto!important;
-        width: 100%;
-      }
+    .tl-content {
+      padding-top: 0;
+    }
 
-      .phase-2 {
-        width: 70%!important;
-      }
+    .timeline .vl {
+      left: 50px;
+    }
+
+    .left.tl-content.white,
+    .left.tl-content.white > div,
+    .right.tl-content.white,
+    .right.tl-content.white > div {
+      max-width: 510px;
+      margin: 0 auto 50px;
+      width: 100%;
+    }
+
+    .left.tl-content.white:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline li.ticked::before {
+      height: 21px;
+      width: 21px;
+    }
+
+    .timeline li.circle::before {
+      width: 21px;
+      height: 21px;
+    }
+
+    .timeline li::before {
+      left: -40px;
+    }
+
+    .phase-2 {
+      padding-top: 20px;
+      padding-bottom: 25px;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .timeline .vl {
+      left: 20px;
+    }
+
+    .left.tl-content.white,
+    .left.tl-content.white > div,
+    .right.tl-content.white,
+    .right.tl-content.white > div {
+      max-width: 88%;
+      margin: 0 auto 20px;
+      width: 100%;
+    }
+
+    .timeline li {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    .phase-2 {
+      padding-top: 10px;
+    }
+  }
+
+  .timeline li:last-child {
+    margin-bottom: 0;
   }
 `;
 
@@ -197,7 +276,35 @@ const StyledSteps = styled.section`
   }
 
   @media screen and (max-width: 768px) {
-      
+    padding: 50px 0;
+    width: 90%;
+
+    .step-sub {
+      font-size: 1.1em;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    width: 95%;
+    > div {
+      flex-direction: column;
+    }
+
+    .step-title {
+      font-size: 8em;
+    }
+
+    .steps-squares {
+      display: none;
+    }
+
+    h5 {
+      font-size: 1.1em;
+    }
+
+    .step-sub {
+      margin-top: -35px;
+    }
   }
 `;
 
@@ -232,16 +339,56 @@ const StyledAddressInput = styled.section`
     text-align: center;
   }
 
-  input:disabled {
-    background-color: #fff;
-    color: #000;
-  }
-
   img {
     cursor: pointer;
     width: 43px;
     display: block;
     margin-left: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    padding-bottom: 100px;
+
+    h5 {
+      font-size: 2em;
+    }
+
+    input {
+      width: 100%;
+      font-size: 16px;
+      height: 50px;
+    }
+
+    img {
+      width: 35px;
+      margin-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    width: 90%;
+    padding-bottom: 75px;
+
+    .input-ctn {
+      width: 100%;
+    }
+
+    h5 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      font-size: 12px;
+      height: 40px;
+    }
+
+    img {
+      width: 30px;
+      margin-left: 15px;
+    }
   }
 `;
 
@@ -316,7 +463,8 @@ const Home = () => {
   return (
     <div>
       <StyledHero className="center-content">
-        <h1 className="white main-heading">SHKOOBY</h1>
+        {/* <h1 className="white main-heading">SHKOOBY</h1> */}
+        <HeroLogo id="hero-logo" />
         <p className="white sub-heading">We are the future of the Metaverse</p>
         <img src={heroImg} alt="Shkooby" className="hero-img" />
       </StyledHero>
@@ -444,13 +592,14 @@ const Home = () => {
         </div>
       </StyledSteps>
       <StyledAddressInput>
-        <h5 className="accent-color">Shkooby Inu Contact Address</h5>
+        <h5 className="accent-color center-content">
+          Shkooby Inu Contact Address
+        </h5>
         <div className="input-ctn">
           <input
             type="text"
             value="0x29a5c1db7321c5c9eae57f9366ee8eef00ca11fb"
             readonly
-            disabled
           />
           <img
             src={copyIcon}

@@ -5,13 +5,13 @@ import { CSSTransition } from 'react-transition-group';
 const StyledSideDrawer = styled.aside`
   position: fixed;
   right: 0;
-  top: 0;
+  top: 100px;
   z-index: 99999;
   min-height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(33px);
-  padding: 10px 10px 0 20px;
+  padding: 50px;
   min-height: -webkit-fill-available;
 
   ul {
@@ -19,8 +19,6 @@ const StyledSideDrawer = styled.aside`
   }
 
   .mobile-links {
-    padding-left: 50px;
-    padding-right: 50px;
     font-size: 1.5em;
     font-family: 'Chakra Bold';
     text-transform: uppercase;
