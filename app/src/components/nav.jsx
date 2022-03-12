@@ -222,8 +222,19 @@ const Nav = () => {
           </a>
         </li>
       </StyledLinks>
+                    
+
       <StyledButton className="primary-bg main-btn">Buy Shkooby</StyledButton>
-      {isTablet ? (
+    {isTablet ? (
+        <div className="header__btn ham-ctn" onClick={setDrawerIsOpen}>
+
+            <div id="navButton" onClick={setDrawerIsOpen} className={` p25 ${drawerIsOpen ? "open" : ""}`}>
+                <div className="bars link"><span></span><span></span><span></span><div className="other-bar"></div></div>
+            </div>
+
+        </div>
+      ) : null}
+      {/*{isTablet ? (
         <div className="ham-ctn">
           <img
             src={hamburgerIcon}
@@ -233,7 +244,7 @@ const Nav = () => {
             className="opacity"
           />
         </div>
-      ) : null}
+      ) : null}*/}
     </StyledNav>
   );
 };
