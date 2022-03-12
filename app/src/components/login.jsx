@@ -15,7 +15,7 @@ const Login = () => {
         <Modal className="p-12"
                activator={({ setShow }) => (
 
-                <button className="relative top-4 md:top-48 mx-1 px-2 md:px-4 py-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-500 text-xs font-bold z-40"
+                <button className="z-50 relative mx-1 px-2 md:px-4 py-2 bg-indigo-700 text-white text-xs font-bold"
                         type="button"
                         onClick={() => setShow(true)}
                 >
@@ -24,7 +24,7 @@ const Login = () => {
             )}
         >
 
-            <div className="h-screen flex flex-col items-center justify-center gap-2 ">
+            <div className="flex flex-col items-center justify-center gap-2 ">
                 <h1 className="text-white text-3xl -mt-24 font-bold mb-12">Login</h1>
 
                 {
@@ -32,7 +32,6 @@ const Login = () => {
                     <div key={x.id} className="w-2/6">
                         <button className="py-3 w-full bg-white rounded-sm hover:bg-slate-100" disabled={!x.ready} key={x.id} onClick={() => {
                             connect(x)
-                            // navigate("/myprofile", {replace: true})
                         }}>
                             {x.name}
                             {!x.ready && ' (unsupported)'}

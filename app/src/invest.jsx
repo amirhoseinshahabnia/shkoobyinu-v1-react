@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Login from './components/login';
-// import ShkoobyPool from './components/shkoobyPool';
 import { useAccount, useConnect, useBalance } from 'wagmi';
 import { ClipboardIcon } from '@heroicons/react/outline';
 
@@ -20,28 +19,26 @@ const Invest = () => {
   if (loading) return <div>Fetching balance…</div>
   if (error) return <div>Error fetching balance</div>
 
-if (accountData) {
+    if (accountData) {
 
-    console.log(accountData?.address)
-    console.log(accountData?.connector)
-    console.log(accountData?.chainId)
+        console.log(accountData?.address)
+        console.log(accountData?.connector)
+        console.log(accountData?.chainId)
 
         return (
             <>
-            <div>
-                <div>
-                    {accountData.ens?.name
-                        ? `${accountData.ens?.name} (${accountData.address})`
-                        : accountData.address}
+                <div className="relative m-h-vh text-white">
+                    <div className="">
+                        {accountData.ens?.name
+                            ? `${accountData.ens?.name} (${accountData.address})`
+                            : accountData.address}
+                    </div>
+                    <div className="">Connected to {accountData.connector.name}</div>
+                    <button className="button" onClick={disconnect}>Disconnect</button>
                 </div>
-                <div>Connected to {accountData.connector.name}</div>
-                <button onClick={disconnect}>Disconnect</button>
-            </div>
-            <div>
-                {data?.formatted} {data?.symbol} {/*{data?.value}*/}
-            </div>
-
-            {/*<ShkoobyPool />*/}
+                <div className="text-white font-bold ma6">
+                    {data?.formatted} {data?.symbol}
+                </div>
             </>
         )
     }

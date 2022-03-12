@@ -16,6 +16,7 @@ import Home from "./home";
 import Invest from "./invest";
 import Nav from "./components/nav";
 import Dashboard from "./components/dashboard";
+import Footer from "./components/footer";
 
 function App() {
     // initialize wagmi library connectors for Metamask and Walletconnect
@@ -60,6 +61,7 @@ function App() {
                         <Route path="/staking" element={<Invest />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                     </Routes>
+                    <Footer></Footer>
                 </Router>
             </div>
         </Provider>

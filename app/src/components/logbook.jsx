@@ -17,7 +17,6 @@ const LogbookContainer = styled.div`
         overflow-scroll
         flex
         flex-col
-        
     `};
 
     ::-webkit-scrollbar {
