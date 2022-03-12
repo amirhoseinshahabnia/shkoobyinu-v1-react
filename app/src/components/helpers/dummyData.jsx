@@ -211,3 +211,87 @@ export const vaultDummyDataObjOne = [
         },
     },
 ];
+
+export const lockedRewardsDummyDataObj = [
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby-ETH",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby-ETH",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby-ETH",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby-ETH",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby-ETH",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby-ETH",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+    {
+        time: "27 Feb 2022 | 21:13:11 GMT",
+        currency: {
+            imgpath: "/",
+            name: "Shkooby-ETH",
+            amount: "52,341,235,212",
+        },
+        timeRemaining: "362 days | 17 hrs | 20 mins",
+    },
+];
