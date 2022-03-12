@@ -112,7 +112,7 @@ const StyledTimeline = styled.section`
     border-radius: 50px;
     padding-top: 30px;
     padding-bottom: 30px;
-    width: 40%;
+    width: 35%;
     padding-right: 30px;
     max-width: 500px;
   }
@@ -137,8 +137,32 @@ const StyledTimeline = styled.section`
     }
   }
 
-  @media screen and (min-width: 1441px) {
-    padding: 200px 0;
+  @media screen and (max-width: 990px) {
+      .timeline li {
+        font-family: 'Chakra Regular';
+        font-size: 1.2625em;
+        margin-bottom: 25px;
+        position: relative;
+      }
+  }
+
+  @media screen and (max-width: 768px) {
+      .timeline .vl {
+        left: -1rem!important;
+      }
+
+      .left.tl-content.white,
+      .left.tl-content.white > div,
+      .right.tl-content.white,
+      .right.tl-content.white > div {
+        max-width: 390px!important;
+        margin: 0 auto!important;
+        width: 100%;
+      }
+
+      .phase-2 {
+        width: 70%!important;
+      }
   }
 `;
 
@@ -171,10 +195,14 @@ const StyledSteps = styled.section`
     margin-top: 0;
     text-transform: uppercase;
   }
+
+  @media screen and (max-width: 768px) {
+      
+  }
 `;
 
 const StyledAddressInput = styled.section`
-  padding: 75px 0;
+  padding: 75px 0 125px;
   width: 60%;
   margin: 0 auto;
   display: flex;
@@ -432,8 +460,6 @@ const Home = () => {
           />
         </div>
       </StyledAddressInput>
-
-      <footer className="page-footer"></footer>
       <ToastContainer type="success" theme="dark" />
     </div>
   );
