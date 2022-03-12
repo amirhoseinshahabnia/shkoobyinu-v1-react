@@ -7,3 +7,4 @@ ehthumbs.db
 Thumbs.db
 .env
 app/.env
+.package-lock.json
