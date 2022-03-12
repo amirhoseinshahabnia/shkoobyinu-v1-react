@@ -16,6 +16,7 @@ import Home from "./home";
 import Invest from "./invest";
 import Nav from "./components/nav";
 import Dashboard from "./components/dashboard";
+import Archive from "./components/Archive/archive";
 import Footer from "./components/footer";
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/staking" element={<Invest />} />
                         <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/archive" element={<Archive />} />
                     </Routes>
                     <Footer></Footer>
                 </Router>
