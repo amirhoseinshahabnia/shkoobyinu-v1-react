@@ -35,7 +35,7 @@ const ShkoobyMock = () => {
 
         <Modal className="p-12 z-40"
                activator={({ setShow }) => (
-                <br>
+
 
                 <button className="text-white font-bold"
                         type="button"
@@ -43,7 +43,7 @@ const ShkoobyMock = () => {
                 >
                     Deposit
                 </button>
-                <br>
+
             )}
         >
 
