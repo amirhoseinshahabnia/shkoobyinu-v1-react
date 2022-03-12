@@ -60,6 +60,61 @@ const StyledFooter = styled.footer`
   .right-ctn .right-links-ctn {
     margin-left: 100px;
   }
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 20px;
+
+    .right-ctn .right-links-ctn {
+      margin-left: 50px;
+    }
+
+    .left-ctn {
+      width: 43%;
+    }
+
+    h5 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1em;
+    }
+
+    ul {
+      font-size: 1em;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    padding: 40px 10px;
+
+    .left-ctn {
+      width: 40%;
+    }
+
+    .right-ctn {
+      width: 45%;
+      justify-content: space-between;
+    }
+
+    .right-ctn .right-links-ctn {
+      margin-left: 0;
+    }
+
+    h5 {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    ul {
+      font-size: 0.8em;
+    }
+  }
 `;
 
 const Footer = () => {
@@ -79,7 +134,7 @@ const Footer = () => {
           <li>Token</li>
           <li>Roadmap</li>
           <li>Litepaper</li>
-          <li>Buy Shkooby</li>
+          <li>Buy Now</li>
         </ul>
         <ul className="right-links-ctn">
           <li>
