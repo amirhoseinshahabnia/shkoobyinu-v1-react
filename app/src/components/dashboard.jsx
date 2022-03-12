@@ -3,7 +3,6 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import Logbook from "./logbook";
-import StakeShkooby from "./stakeShkooby";
 
 import unicorn from "../assets/img/unicorniconsvg.svg";
 import shkooby from "../assets/img/shkoobycoin.svg";
@@ -278,12 +277,10 @@ const Dashboard = () => {
                             </AccountRight>
                         </div>
                     </Account>
-
                     <Logbook />
                     <stakeShkooby />
                 </Grid>
             </Container>
-            ;
         </>
     );
 };

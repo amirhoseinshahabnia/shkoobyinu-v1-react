@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.712adb97.css",
-    "main.js": "/static/js/main.ee202c51.js",
+    "main.css": "/static/css/main.2b0a4199.css",
+    "main.js": "/static/js/main.81c26899.js",
     "static/media/grad-bg@2x.png": "/static/media/grad-bg@2x.9611a44757fec7fec1b5.png",
     "static/media/shkooby-hero.png": "/static/media/shkooby-hero.6e9b21b2d380660752d3.png",
     "static/media/grad-bg-lrg.png": "/static/media/grad-bg-lrg.b6057df0e5674cb3e03d.png",
@@ -20,11 +20,11 @@
     "static/media/wallet-icon.svg": "/static/media/wallet-icon.299e087d2be367286b0a.svg",
     "index.html": "/index.html",
     "static/media/external-icon.svg": "/static/media/external-icon.1acaf803f038a4f05a8c.svg",
-    "main.712adb97.css.map": "/static/css/main.712adb97.css.map",
-    "main.ee202c51.js.map": "/static/js/main.ee202c51.js.map"
+    "main.2b0a4199.css.map": "/static/css/main.2b0a4199.css.map",
+    "main.81c26899.js.map": "/static/js/main.81c26899.js.map"
   },
   "entrypoints": [
-    "static/css/main.712adb97.css",
-    "static/js/main.ee202c51.js"
+    "static/css/main.2b0a4199.css",
+    "static/js/main.81c26899.js"
   ]
 }
