@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import SideDrawer from './sideDrawer';
 import Backdrop from './backdrop';
 import { ReactComponent as MainLogo } from '../assets/img/logo-dark.svg';
-import mobileLogo from '../assets/img/heaedr-logo-mobile@2x.png';
+import mobileLogo from '../assets/img/mobileLogo.svg';
 import hamburgerIcon from '../assets/img/hamburger-icon@2x.png';
 
 const StyledNav = styled.header`

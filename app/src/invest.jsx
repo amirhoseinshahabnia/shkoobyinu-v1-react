@@ -47,7 +47,7 @@ const Invest = () => {
 
             <div className="bottom-content">
 
-                <a href="" target="_blank" style={{ backgroundImage:`url(${Icon})` }}><span>View Audit Report</span></a>
+                <a href="https://hacken.io/wp-content/uploads/2021/11/Shkoobiinu_16112021SCAudit_Report.pdf" target="_blank" style={{ backgroundImage:`url(${Icon})` }}><span>View Audit Report</span></a>
 
             </div>
 

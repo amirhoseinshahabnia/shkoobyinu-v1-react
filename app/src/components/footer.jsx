@@ -131,29 +131,29 @@ const Footer = () => {
       </div>
       <div className="right-ctn">
         <ul>
-          <li>Token</li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li>Litepaper</li>
-          <li><a href="https://app.uniswap.org" target="_blanl">Buy Now</li>
+          <li><a href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf#page=3" target="_blank">Token</a></li>
+          <li><a href="/#roadmap">Roadmap</a></li>
+          <li><a href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf" target="_blank">Litepaper</a></li>
+          <li><a href="https://app.uniswap.org" target="_blank">Buy Now</a></li>
         </ul>
         <ul className="right-links-ctn">
           <li>
-            <a href="https://t.me/shkoobyinu" className="white opacity">
+            <a href="https://t.me/shkoobyinu" target="_blank" className="white opacity">
               Telegram
             </a>
           </li>
           <li>
-            <a href="https://www.twitter.com/shkoobyinu" className="white opacity">
+            <a href="https://www.twitter.com/shkoobyinu" target="_blank" className="white opacity">
               Twitter
             </a>
           </li>
           <li>
-            <a href="https://medium.com/@shkoobyinu" className="white opacity">
+            <a href="https://medium.com/@shkoobyinu" target="_blank" className="white opacity">
               Discord
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/shkoobyinu" className="white opacity">
+            <a href="https://www.instagram.com/shkoobyinu" target="_blank" className="white opacity">
               Instagram
             </a>
           </li>
