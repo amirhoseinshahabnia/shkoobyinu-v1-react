@@ -279,7 +279,7 @@ const Dashboard = () => {
                         </div>
                     </Account>
                     <Logbook />
-                    <ModalStake />
+                    {/*<ModalStake />*/}
                 </Grid>
             </Container>
         </>
