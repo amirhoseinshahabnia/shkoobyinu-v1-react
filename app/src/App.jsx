@@ -12,15 +12,14 @@ import { InjectedConnector } from "wagmi/connectors/injected";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { WalletLinkConnector } from "wagmi/connectors/walletLink";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./home";
-import Invest from "./invest";
-import Nav from "./components/nav";
-import Dashboard from "./components/dashboard";
-import Archive from "./components/Archive/archive";
-import Footer from "./components/footer";
+import Home from "home";
+import Invest from "invest";
+import Nav from "components/nav";
+import Dashboard from "components/dashboard";
+import Archive from "components/archive/archive";
+import Footer from "components/footer";
 
 function App() {
-    // initialize wagmi library connectors for Metamask and Walletconnect
     const connectors = ({ chainId }) => {
         const rpcUrl =
             defaultChains.find((x) => x.id === chainId)?.rpcUrls?.[0] ??
@@ -56,7 +55,7 @@ function App() {
         >
             <div className="container">
                 <Router>
-                    <Nav className=""></Nav>
+                    <Nav></Nav>
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/staking" element={<Invest />} />

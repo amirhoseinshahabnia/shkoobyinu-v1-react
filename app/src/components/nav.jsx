@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
-import SideDrawer from './sideDrawer';
-import Backdrop from './backdrop';
-import { ReactComponent as MainLogo } from '../assets/img/logo-dark.svg';
-import mobileLogo from '../assets/img/mobileLogo.svg';
-import hamburgerIcon from '../assets/img/hamburger-icon@2x.png';
+import SideDrawer from 'components/sideDrawer';
+import Backdrop from 'components/backdrop';
+import { ReactComponent as MainLogo } from 'assets/img/logo-dark.svg';
+import mobileLogo from 'assets/img/mobileLogo.svg';
 
 const StyledNav = styled.header`
   height: 65px;
@@ -139,6 +139,14 @@ const StyledButton = styled.button`
 `;
 
 const Nav = () => {
+
+const location = useLocation();
+
+const isCurrentURL = (url) => {
+    return location.pathname.toLowerCase() === url.toLowerCase();
+}
+
+
   // const [{ data: accountData }, disconnect] = useAccount();
 
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
@@ -161,14 +169,14 @@ const Nav = () => {
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <ul className="mobile-links">
           <li>
-            <a className="opacity white" href="#frontTime">
+            <a className="opacity white" href="/">
               Roadmap
             </a>
           </li>
           <li className="external-mobile">
             <a
-              className="opacity white "
-              href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf#page=3"
+              className="opacity white"
+              href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf"
               target="_blank"
             >
               Litepaper
@@ -193,19 +201,19 @@ const Nav = () => {
         {isTablet ? (
           <img id="heaedr-logo-mobile" className="opacity" src={mobileLogo} />
         ) : (
-          <MainLogo id="heaedr-logo" className="opacity" />
+          <MainLogo id="header-logo" className="opacity" />
         )}
       </Link>
       <StyledLinks>
         <li>
-          <a className="opacity white" href="#frontTime">
+          <a className="opacity white" href="/">
             Roadmap
           </a>
         </li>
         <li>
           <a
             className="opacity white external"
-            href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf#page=3"
+            href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf"
             target="_blank"
           >
             Litepaper
@@ -222,9 +230,18 @@ const Nav = () => {
           </a>
         </li>
       </StyledLinks>
-                    
+                { !isCurrentURL('/staking') ? <>
+                    <button className="primary-bg main-btn invest-only" href="/Profile">BUY SHKOOBY</button>
+                  </> 
+                  : <>
+                    <button className="primary-bg main-btn invest-only" href="/Profile">CONNECT WALLET</button>
+                  </>  }
 
-      <StyledButton className="primary-bg main-btn">Buy Shkooby</StyledButton>
+      {/*<StyledButton className="primary-bg main-btn">Buy Shkooby</StyledButton>*/}
+      
+      
+      
+      <StyledButton className="primary-bg main-btn invest-only hidden">Buy Shkooby</StyledButton>
     {isTablet ? (
         <div className="header__btn ham-ctn" onClick={setDrawerIsOpen}>
 
@@ -234,17 +251,7 @@ const Nav = () => {
 
         </div>
       ) : null}
-      {/*{isTablet ? (
-        <div className="ham-ctn">
-          <img
-            src={hamburgerIcon}
-            alt="hamburger menu"
-            onClick={openDrawerHandler}
-            id="hamburger-menu"
-            className="opacity"
-          />
-        </div>
-      ) : null}*/}
+
     </StyledNav>
   );
 };

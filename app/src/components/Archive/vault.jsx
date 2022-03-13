@@ -3,9 +3,9 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import ReactPaginate from "react-paginate";
 
-import "./archive.css";
+import "components/archive/archive.css";
 
-import { vaultDummyDataObjOne } from "../helpers/dummyData";
+import { vaultDummyDataObjOne } from "components/helpers/dummyData";
 
 const VaultCard = styled.div`
     ${tw`

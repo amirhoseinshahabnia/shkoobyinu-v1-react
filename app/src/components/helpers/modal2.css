@@ -20,7 +20,7 @@
     width: 100%;
     max-width: 90%;
     max-height: 90%;
-    height: 40vh;
+
     width: 1200px;
 
     margin: 0 auto;
@@ -45,7 +45,7 @@
 
 @media screen and (max-width: 768px) {
     .modal {
-      max-height: 80%;
+        max-height: 80%;
         overflow: hidden;
     } 
     .modal-close {
@@ -64,7 +64,6 @@
 
 .time-time {
     font-size: 4rem;
-
     font-family: "Press Start";
 }
 
@@ -81,16 +80,17 @@
     }
 }
 .modal-body {
-  padding: 1.25rem 1.5rem;
-  border-radius: 4px;
-  background-color: black;
-  position: relative;
+    padding: 1.25rem 1.5rem;
+    border-radius: 4px;
+    background-color: black;
+    position: relative;
 }
 
 .modal-body .contain {
-  max-width: 90%;
-  max-height: 90%;
-  height: 40vh;
+  max-width: 100%;
+  max-height: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   color: white; }
 
 /* Overlay Transitions */

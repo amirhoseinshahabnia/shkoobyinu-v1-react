@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import ReactPaginate from "react-paginate";
 
-import { lockedRewardsDummyDataObj } from "../helpers/dummyData";
+import { lockedRewardsDummyDataObj } from "components/helpers/dummyData";
 
 const LockedRewardsCard = styled.div`
     ${tw`

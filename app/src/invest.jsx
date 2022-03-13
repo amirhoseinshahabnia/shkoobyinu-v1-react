@@ -1,14 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
+import Login from 'components/login';
 import styled from 'styled-components';
-import Login from './components/login';
 import { useAccount, useConnect, useBalance } from 'wagmi';
-import { ClipboardIcon } from '@heroicons/react/outline';
-import './investement.css';
-import Background from './assets/img/background.jpg';
-import Icon from './assets/img/Asset3.svg';
-import CountDown from './components/countDown';
+import 'investement.css';
+import CountDown from 'components/subcomponents/countdown';
+import ButtonAudit from 'components/subcomponents/buttonAudit';
+import Background from 'assets/img/background.jpg';
+import Icon from 'assets/img/solid-group.svg';
+
+const StyledHero = styled.section`
+button.hidden {
+        display: block!important;
+        opacity: 1!important;
+    }`
 
 const Invest = () => {
+
 
     // const [{ data: connectData, error: connectError }, connect] = useConnect()
     // const [{ data: accountData }, disconnect] = useAccount({
@@ -36,18 +43,19 @@ const Invest = () => {
             <div className="top-content text-white">
 
                 <h1 className="main-heading">STAKING</h1>
+                
                 <h3 className="secondary-heading">
-                <span className="desktop">Start SHKOOBY in one of our two pools to start earning rewards</span>
-                <span className="mobile">Let your Shkooby Tokens work you</span>
+                    <span className="desktop">Stake SHKOOBY in one of our two pools to start earning rewards</span>
+                    <span className="mobile">Let your Shkooby Tokens work you</span>
                 </h3>
+
                 <CountDown  date={new Date('2022-03-T01:02:03')} />
-                {/*<button className="desktop sc-furwcr jWBxkT primary-bg main-btn">CONNECT</button>*/}
 
             </div>
 
             <div className="bottom-content">
 
-                <a href="https://hacken.io/wp-content/uploads/2021/11/Shkoobiinu_16112021SCAudit_Report.pdf" target="_blank" style={{ backgroundImage:`url(${Icon})` }}><span>View Audit Report</span></a>
+                <a className="home solidgroup" href="https://hacken.io/wp-content/uploads/2021/11/Shkoobiinu_16112021SCAudit_Report.pdf" target="_blank" style={{ backgroundImage:`url(${Icon})` }}><span>View Audit Report</span></a>
 
             </div>
 

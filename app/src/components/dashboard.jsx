@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-import Logbook from "./logbook";
-import StakeShkooby from "./stakeShkooby";
+import Logbook from "components/logbook";
+import ModalStake from "components/modalStake";
 
-import unicorn from "../assets/img/unicorniconsvg.svg";
-import shkooby from "../assets/img/shkoobycoin.svg";
-import shkoobyeth from "../assets/img/shkoobyethcoin.svg";
+import unicorn from "assets/img/unicorniconsvg.svg";
+import shkooby from "assets/img/shkoobycoin.svg";
+import shkoobyeth from "assets/img/shkoobyethcoin.svg";
 
 const Container = styled.div`
     ${tw`
@@ -279,7 +279,7 @@ const Dashboard = () => {
                         </div>
                     </Account>
                     <Logbook />
-                    <StakeShkooby />
+                    <ModalStake />
                 </Grid>
             </Container>
         </>

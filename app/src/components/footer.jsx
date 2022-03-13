@@ -26,6 +26,7 @@ const StyledFooter = styled.footer`
     font-size: 1.6em;
     text-transform: uppercase;
     margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   p {
@@ -131,8 +132,8 @@ const Footer = () => {
       </div>
       <div className="right-ctn">
         <ul>
-          <li><a href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf#page=3" target="_blank">Token</a></li>
-          <li><a href="/#roadmap">Roadmap</a></li>
+          <li><a href="https://etherscan.io/token/0x29a5c1db7321c5c9eae57f9366ee8eef00ca11fb" target="_blank">Token</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
           <li><a href="https://www.docdroid.net/7LeGzhU/shkooby-inu-litepaper-deck-1-pdf" target="_blank">Litepaper</a></li>
           <li><a href="https://app.uniswap.org" target="_blank">Buy Now</a></li>
         </ul>
@@ -149,7 +150,7 @@ const Footer = () => {
           </li>
           <li>
             <a href="https://medium.com/@shkoobyinu" target="_blank" className="white opacity">
-              Discord
+              Medium
             </a>
           </li>
           <li>

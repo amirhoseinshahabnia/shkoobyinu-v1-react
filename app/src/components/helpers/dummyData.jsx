@@ -1,5 +1,5 @@
-import coin from "../../assets/img/shkoobycoin.svg";
-import coin2 from "../../assets/img/shkoobyethcoin.svg";
+import coin from "assets/img/shkoobycoin.svg";
+import coin2 from "assets/img/shkoobyethcoin.svg";
 
 export const vaultDummyDataObjOne = [
     {

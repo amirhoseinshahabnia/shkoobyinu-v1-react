@@ -4,20 +4,21 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMediaQuery } from 'react-responsive';
 import { ToastContainer, toast } from 'react-toastify';
-import heroImg from './assets/img/shkooby-hero.png';
-import gradientBg from './assets/img/grad-bg@2x.png';
-import gradientBgLrg from './assets/img/grad-bg-lrg.png';
-import circleBg from './assets/img/li-circle@2x.png';
-import sqaures from './assets/img/steps-squares.png';
-import copyIcon from './assets/img/copy-icon@2x.png';
-import { ReactComponent as HeroLogo } from './assets/img/shkooby-white-logo.svg';
-import { ReactComponent as HackenLogo } from './assets/img/hacken-logo.svg';
+import heroImg from 'assets/img/shkooby-hero.jpg';
+import gradientBg from 'assets/img/bg-grad.png';
+import gradientBgLrg from 'assets/img/bg-grad.png';
+import circleBg from 'assets/img/li-circle@2x.png';
+import sqaures from 'assets/img/steps-squares.png';
+import copyIcon from 'assets/img/copy-icon@2x.png';
+import { ReactComponent as HeroLogo } from 'assets/img/shkooby-white-logo.svg';
+import { ReactComponent as HackenLogo } from 'assets/img/hacken-logo.svg';
 import 'react-toastify/dist/ReactToastify.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const StyledHero = styled.section`
   padding-top: 75px;
+  position: relative;
   img {
     display: block;
     width: 100%;
@@ -47,6 +48,16 @@ const StyledHero = styled.section`
   }
 
   @media screen and (max-width: 580px) {
+    height: 70vh;
+img {
+    display: block;
+    width: 180%;
+    max-width: unset;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
     svg {
       width: 40%;
     }
@@ -125,7 +136,7 @@ const StyledTimeline = styled.section`
   }
 
   .tl-content > div {
-    padding-left: 60px;
+    padding-left: 80px;
   }
 
   .tl-content:first-child {
@@ -135,7 +146,7 @@ const StyledTimeline = styled.section`
   .phase-2 {
     border: 1px solid #fff;
     border-radius: 50px;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 30px;
     width: 35%;
     padding-right: 30px;
@@ -264,9 +275,10 @@ const StyledSteps = styled.section`
   }
 
   .step-sub {
-    font-family: 'Poppins Semi Bold';
+    font-family: 'Poppins';
     font-size: 1.25em;
     text-transform: uppercase;
+
   }
 
   h5 {
@@ -396,6 +408,8 @@ const StyledAddressInput = styled.section`
 const StyledAuditReport = styled.section`
   padding-top: 30px;
   padding-bottom: 20px;
+  position: relative;
+  top: -6vh;
 
   a {
     text-transform: capitalize;
@@ -486,12 +500,11 @@ const Home = () => {
   return (
     <div>
       <StyledHero className="center-content">
-        {/* <h1 className="white main-heading">SHKOOBY</h1> */}
         <HeroLogo id="hero-logo" />
         <p className="white sub-heading">We are the future of the Metaverse</p>
         <img src={heroImg} alt="Shkooby" className="hero-img" />
       </StyledHero>
-      {isTabletOrMobile ? (
+
         <StyledAuditReport className="center-content">
           <a
             href="https://hacken.io/wp-content/uploads/2021/11/Shkoobiinu_16112021SCAudit_Report.pdf"
@@ -502,7 +515,7 @@ const Home = () => {
           </a>
           <HackenLogo id="hacken-logo" />
         </StyledAuditReport>
-      ) : null}
+
       <StyledTimeline id="frontTime">
         {isLargeDesktop ? (
           <img src={gradientBgLrg} alt="Gradient Background" id="grad-bg" />
@@ -600,7 +613,7 @@ const Home = () => {
           <div className="step-content white center-content">
             <p className="step-title">2</p>
             <p className="step-sub">
-              Find Your <br />
+              Fill Your <br />
               Wallet With ETH
             </p>
           </div>
@@ -611,7 +624,7 @@ const Home = () => {
             <p className="step-title">3</p>
             <p className="step-sub">
               Input SHKOOBY <br />
-              Adress In Uniswap
+              Address In Uniswap
             </p>
           </div>
           <div className="steps-squares">
@@ -634,7 +647,7 @@ const Home = () => {
           <input
             type="text"
             value="0x29a5c1db7321c5c9eae57f9366ee8eef00ca11fb"
-            readonly
+            readOnly
           />
           <img
             src={copyIcon}

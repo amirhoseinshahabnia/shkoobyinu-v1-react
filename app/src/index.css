@@ -8,34 +8,35 @@
   font-family: 'Chakra Regular';
   font-style: normal;
   font-weight: normal;
-  src: url('./assets/fonts/ChakraPetch-Regular.ttf') format('truetype');
+  src: url('assets/fonts/ChakraPetch-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Chakra Semi Bold';
   font-style: normal;
   font-weight: normal;
-  src: url('./assets/fonts/ChakraPetch-SemiBold.ttf') format('truetype');
+  src: url('assets/fonts/ChakraPetch-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Chakra Bold';
   font-style: normal;
   font-weight: normal;
-  src: url('./assets/fonts/ChakraPetch-Bold.ttf') format('truetype');
+  src: url('assets/fonts/ChakraPetch-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Press Start';
   font-style: normal;
   font-weight: normal;
-  src: url('./assets/fonts/PressStart2P-Regular.ttf') format('truetype');
+  src: url('assets/fonts/PressStart2P-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'VT Regular';
   font-style: normal;
   font-weight: normal;
-  src: url('./assets/fonts/VT323-Regular.ttf') format('truetype');
+  font-style: 3.2rem;
+  src: url('assets/fonts/VT323-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -43,45 +44,64 @@
     font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
-    src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+    src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
-    src: url("./assets/fonts/Poppins-Medium.ttf") format("truetype");
+    src: url("assets/fonts/Poppins-Medium.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 800;
-    src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+    src: url("assets/fonts/Poppins-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 800;
-    src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+    src: url("assets/fonts/Poppins-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Sofia Pro Medium";
     font-style: normal;
     font-weight: normal;
-    src: url("./assets/fonts/SofiaProMedium.ttf") format("truetype");
+    src: url("assets/fonts/SofiaProMedium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'ArchivoBlack Regular';
   font-style: normal;
   font-weight: normal;
-  src: url('./assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  src: url('assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
 }
 
 
+
+/* layouts */
+
+@media screen and (min-width: 1440px) and (max-height: 900px) {
+    h1.main-heading {
+        font-size: 5.5vh!important;
+    }
+    footer {
+        padding: 2rem 5%!important;
+        font-size: 2vh!important;
+    }
+}
+
+
+#hacken-logo {
+    max-width: 100%;
+    width: 100px;
+    margin: 25px auto;
+}
 /* investement page */
 
 #investment-content {
@@ -156,7 +176,7 @@ a.external::after {
   position: absolute;
   top: 5px;
   right: -20px;
-  background: url('./assets/img/external-icon.svg');
+  background: url('assets/img/external-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -169,7 +189,7 @@ li.external-mobile::after {
   position: absolute;
   top: 6px;
   right: -20px;
-  background: url('./assets/img/external-icon.svg');
+  background: url('assets/img/external-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -182,7 +202,7 @@ li.wallet::after {
   position: absolute;
   top: 5px;
   right: -20px;
-  background: url('./assets/img/wallet-icon.svg');
+  background: url('assets/img/wallet-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -269,6 +289,10 @@ li.wallet::after {
 }
 
 @media screen and (max-width: 600px) {
+
+    .main-btn {
+        min-width: 205px;
+    }
   .main-heading {
     font-size: 1.3em;
   }
