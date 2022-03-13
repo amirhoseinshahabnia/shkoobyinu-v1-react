@@ -5,12 +5,13 @@ import ReactPaginate from "react-paginate";
 
 import { lockedRewardsDummyDataObj } from "components/helpers/dummyData";
 
+import coin from "assets/img/shkoobycoin.svg";
+
 const LockedRewardsCard = styled.div`
     ${tw`
         text-white
         p-5
         rounded-xl
-        border
         border-solid
         border-4
         w-full
@@ -19,7 +20,7 @@ const LockedRewardsCard = styled.div`
     `};
     ::-webkit-scrollbar {
         width: 5px;
-        height: 5px;
+        height: 10px;
         z-index: -1;
     }
     ::-webkit-scrollbar-button {
@@ -82,12 +83,14 @@ const TableData = styled.td`
     text-white
     border-t-2
     border-b-2
+    text-sm
+    lg:text-lg
     `};
 `;
 
 const CurrencyIcon = styled.img`
     ${tw`
-    
+     w-6
     `};
 `;
 
@@ -115,8 +118,10 @@ const LockedRewards = () => {
                     <TableData>{table.time}</TableData>
                     <TableData>
                         <div>
-                            <img src={table.currency.imgpath} alt="" />
-                            <h1>{table.currency.name}</h1>
+                            <div className="flex space-x-2 my-1 items-center">
+                                <CurrencyIcon src={coin} alt="coin" />
+                                <h1>{table.currency.name}</h1>
+                            </div>
                             <h1>{table.currency.amount}</h1>
                         </div>
                     </TableData>
@@ -137,7 +142,7 @@ const LockedRewards = () => {
                     </TableRow>
                     {displayTables}
                 </Table>
-                <div className="relative flex justify-start items-center overflow-hidden">
+                <div className="relative flex justify-start items-center w-full">
                     <ReactPaginate
                         previousLabel={"Previous"}
                         nextLabel={"Next"}

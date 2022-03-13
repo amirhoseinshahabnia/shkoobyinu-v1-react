@@ -3,8 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { BsWallet2 } from "react-icons/bs";
 
-import { useLocation } from 'react-router-dom';
-
+import { useLocation } from "react-router-dom";
 
 import coin from "assets/img/shkoobycoin.svg";
 
