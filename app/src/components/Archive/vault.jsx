@@ -7,12 +7,13 @@ import "components/archive/archive.css";
 
 import { vaultDummyDataObjOne } from "components/helpers/dummyData";
 
+import coin from "assets/img/shkoobycoin.svg";
+
 const VaultCard = styled.div`
     ${tw`
         text-white
         p-5
         rounded-xl
-        border
         border-solid
         border-4
         w-full
@@ -21,7 +22,7 @@ const VaultCard = styled.div`
     `};
     ::-webkit-scrollbar {
         width: 5px;
-        height: 5px;
+        height: 10px;
         z-index: -1;
     }
     ::-webkit-scrollbar-button {
@@ -83,12 +84,14 @@ const TableData = styled.td`
     text-white
     border-t-2
     border-b-2
+    text-sm
+    lg:text-lg
     `};
 `;
 
 const CurrencyIcon = styled.img`
     ${tw`
-    
+        w-6
     `};
 `;
 
@@ -118,7 +121,7 @@ const Vault = () => {
     const [tables, setTables] = useState(vaultDummyDataObjOne.slice(0, 50));
     const [pageNumber, setPageNumber] = useState(0);
 
-    const tablesPerPage = 8;
+    const tablesPerPage = 5;
     const pagesVisited = pageNumber * tablesPerPage;
 
     const pageCount = Math.ceil(vaultDummyDataObjOne.length / tablesPerPage);
@@ -136,15 +139,19 @@ const Vault = () => {
                     <TableData>{table.tenure}</TableData>
                     <TableData>
                         <div>
-                            <CurrencyIcon src={"/"} />
-                            <h1>{table.stakedAmount.currency}</h1>
+                            <div className="flex space-x-2 my-1 items-center">
+                                <CurrencyIcon src={coin} />
+                                <h1>{table.stakedAmount.currency}</h1>
+                            </div>
                             <h1>{table.stakedAmount.amount}</h1>
                         </div>
                     </TableData>
                     <TableData>{table.unlockDate}</TableData>
                     <TableData>
-                        <CurrencyIcon src={"/"} />
-                        <h1>{table.readyRewards.currency}</h1>
+                        <div className="flex space-x-2 my-1 items-center">
+                            <CurrencyIcon src={coin} />
+                            <h1>{table.readyRewards.currency}</h1>
+                        </div>
                         <h1>{table.readyRewards.amount}</h1>
                     </TableData>
                     <TableData>
@@ -171,7 +178,7 @@ const Vault = () => {
                     </TableRow>
                     {displayTables}
                 </Table>
-                <div className="relative flex justify-start items-center overflow-hidden">
+                <div className="relative flex w-full justify-start items-center">
                     <ReactPaginate
                         previousLabel={"Previous"}
                         nextLabel={"Next"}

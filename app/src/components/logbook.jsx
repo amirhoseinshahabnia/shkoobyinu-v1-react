@@ -10,7 +10,6 @@ const LogbookContainer = styled.div`
         bg-black
         col-span-5
         rounded-xl
-        border
         border-solid
         border-white
         border-4
